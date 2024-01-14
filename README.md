@@ -275,22 +275,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const qr = require("qrcode");
 const axios = require('axios');
-// const http = require('http');
-require('dotenv').config() 
-
-// setting global attributes
-global.connectionId = null;
-global.connected = false;
-global.credStatus = false;
-global.proofStatus = false;
-global.retrievedAttribute = null;
-
-
-// initiating the express js
-const express = require('express')
-const bodyParser = require('body-parser')
-const qr = require("qrcode");
-const axios = require('axios');
 require('dotenv').config() 
 
 // setting global attributes
@@ -306,8 +290,6 @@ app.set("view engine", "ejs");
 // setting up various parsers
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
-
-
 /*************************************************************
  *  ALL OF YOUR API SHOULD BE WRITTEN BELOW THIS LINE
 *************************************************************/
