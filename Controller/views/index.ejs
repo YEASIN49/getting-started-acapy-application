@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- Required meta tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<title>Document</title>
+	</head>
+	<body>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Faber College</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-5 mb-lg-0">
+					<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="/">Home</a>
+					</li>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container px-4 py-5" id="featured-3">
+			<h2 class="pb-2 border-bottom">Faber College</h2>
+			<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+				<div class="feature col-6">
+					<h2>STEP-01: Connection to Faber College</h2>
+					<div class="list-group">
+						<a href="/newConnection" class="list-group-item list-group-item-action list-group-item-primary">Create new connection</a>
+					</div>
+				</div>
+
+				<div class="feature col-6">
+					<h2>STEP-02: Credential Issue</h2>
+					<p>Once you successfully Connected to Faber, you can use issue VC</p>
+					<div class="list-group">
+						<div>
+							<!-- <a href="/vcFormReq" class="list-group-item list-group-item-action">Issue Credentials</a> -->
+							
+							<main class="form-signin">
+								<!-- <div class="form-floating">
+									  <label for="floatingInput">Please fill up the data to generate the VC:</label>
+									  <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+									  <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+									  <input type="text" class="form-control" name="address" id="address" placeholder="Address">
+									  <input type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth (DD/MM/YYYY)">
+								</div> -->
+
+								<form action="/offerCredential" method="POST">
+									<label for="floatingInput">Please fill up the data to generate the VC:</label>
+									<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+									<input type="text" class="form-control" name="email" id="email" placeholder="Email">
+									<input type="text" class="form-control" name="address" id="address" placeholder="Address">
+									<input type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth (DD/MM/YYYY)">
+									<input class="w-10 btn btn-lg btn-primary" type="submit" value="Submit">
+								</form> 
+
+
+								<!-- <br>
+								<button class="w-10 btn btn-lg btn-primary" type="submit" id="submit">Submit</button> -->
+						  </main>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+				<div class="feature col-6">
+
+					<div class="list-group">
+						<h2>STEP-03: Now Accept VC from Mobile</h2>
+						<p>Once you successfully receive the VC in your mobile, you need to open it and click "Accept" button.</p>
+					</div>
+				</div>
+
+				<div class="feature col-6">
+
+					<div class="list-group">
+						<h2>STEP-04: Send Proof Request</h2>
+						<p>Once you successfully stored the VC, you can proof your role as "student" of Faber College</p>
+						<div>
+							<a href="/proofReq" class="list-group-item list-group-item-action list-group-item-primary">Request Proof</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+				<div class="feature col-6">
+
+					<div class="list-group">
+						<h2>STEP-05: Now Check your role</h2>
+						<a href="/checkRole" class="list-group-item list-group-item-action list-group-item-primary">Check</a>
+						<!-- <p>Once you successfully receive the VC in your mobile, you need to open it and click "Accept" button.</p> -->
+					</div>
+				</div>
+
+			
+			</div>
+
+		</div>
+		
+		
+
+		<% if (typeof message !== 'undefined') { %>
+			<script>
+				alert("<%= message %>");
+			</script>
+		<% } %>
+
+		<script>
+			
+			$(document).ready(function () {
+                
+				$(document).on('click', '#submit', async function(e){ 
+                  
+                    var name = $('#name').val();
+					var email = $('#email').val();
+                    var address = $('#address').val();
+					var dob = $('#dob').val();
+					var form = $("<form/>", 
+						{ action: '/offerCredential', method: 'POST' }
+					);
+					form.append( 
+						$('<input>', {type: 'hidden', id: 'name', name: 'name', value: name})
+					);
+					form.append( 
+						$('<input>', {type: 'hidden', id: 'email', name: 'email', value: email}
+						)
+					);
+                    form.append( 
+						$('<input>', {type: 'hidden', id: 'address', name: 'address', value: address}
+						)
+					);
+                    form.append( 
+						$('<input>', {type: 'hidden', id: 'dob', name: 'dob', value: dob}
+						)
+					);
+
+					form.appendTo('body').submit();
+					
+				});
+			});
+		
+		</script>
+	</body>
+</html>
